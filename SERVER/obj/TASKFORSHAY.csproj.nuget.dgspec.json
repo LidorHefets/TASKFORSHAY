@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/TASKFORSHAY.csproj": {}
+    "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj": {}
   },
   "projects": {
-    "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/TASKFORSHAY.csproj": {
+    "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/TASKFORSHAY.csproj",
+        "projectUniqueName": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj",
         "projectName": "TASKFORSHAY",
-        "projectPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/TASKFORSHAY.csproj",
+        "projectPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj",
         "packagesPath": "/Users/nadavmarco/.nuget/packages/",
-        "outputPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/obj/",
+        "outputPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nadavmarco/.nuget/NuGet/NuGet.Config"

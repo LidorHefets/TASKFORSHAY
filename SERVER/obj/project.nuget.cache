@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JNNaxQRbho4=",
+  "dgSpecHash": "8l/PLl/d3lA=",
   "success": true,
-  "projectFilePath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/TASKFORSHAY.csproj",
+  "projectFilePath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj",
   "expectedPackageFiles": [
     "/Users/nadavmarco/.nuget/packages/microsoft.aspnetcore.openapi/8.0.10/microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",
     "/Users/nadavmarco/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
