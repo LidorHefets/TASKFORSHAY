@@ -1,55 +1,100 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System;
+using System.Data;
+using Microsoft.Data.SqlClient;
 using TASKFORSHAY.Models;
 
 namespace TASKFORSHAY.DAL
 {
     public class UsersDAL : DBServices
     {
-        private SqlDataReader reader;
         private SqlConnection connection;
         private SqlCommand command;
+        private SqlDataReader reader;
 
-
-        //-- STORED PROCEDURE: RegisterUser
-        public List<Users> GetAllCastFromDB()
+        // רישום משתמש חדש - קריאה ל-SP: sp_RegisterUser
+        // מחזיר את מספר השורות שהושפעו (1 אם נרשם בהצלחה, 0 אם לא)
+        public int RegisterUser(Users user)
         {
+            int rowsAffected = 0;
+
             try
             {
                 connection = Connect();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
 
-            command = CreateCommandWithStoredProcedure("GetCast", connection, null);
+                Dictionary<string, object> paramDic = new Dictionary<string, object>();
+                paramDic.Add("@UserName", user.UserName);
+                paramDic.Add("@Email", user.Email);
+                paramDic.Add("@Password", user.Password);
 
-            try
-            {
-                List<Users> lst = new List<Users>();
-                reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    lst.Add(new Users()
-                    {
-                        //Id = int.Parse(reader["Id"].ToString()),
-                        //Name = reader["Name"].ToString(),
-                        //Role = reader["Role"].ToString(),
-                        //DateOfBirth = DateTime.Parse(reader["DateOfBirth"].ToString()),
-                        //PhotoUrl = reader["PhotoUrl"].ToString()
-                    });
-                }
-                return lst;
+                command = CreateCommandWithStoredProcedure("sp_RegisterUser", connection, paramDic);
+
+                rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                throw ex;
+                // כאן אפשר לזהות שגיאה של אימייל קיים (אם ה-SP מרים RAISERROR)
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
             finally
             {
-                if (connection != null)
+                if (connection != null && connection.State != ConnectionState.Closed)
+                {
                     connection.Close();
+                }
             }
+
+            return rowsAffected;
+        }
+
+        // התחברות משתמש - קריאה ל-SP: LoginUser_sp
+        // מחזיר אובייקט Users (ללא סיסמה) אם נמצאה התאמה, אחרת null
+        public Users Login(string email, string password)
+        {
+            Users user = null;
+
+            try
+            {
+                connection = Connect();
+
+                Dictionary<string, object> paramDic = new Dictionary<string, object>();
+                paramDic.Add("@Email", email);
+                paramDic.Add("@Password", password);
+
+                command = CreateCommandWithStoredProcedure("LoginUser_sp", connection, paramDic);
+
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    user = new Users();
+                    user.Id = Convert.ToInt32(reader["Id"]);
+                    user.UserName = reader["UserName"].ToString();
+                    user.Email = reader["Email"].ToString();
+                    // שים לב: הסיסמה לא חוזרת מה-SP וזה מעולה.
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                {
+                    reader.Close();
+                }
+
+                if (connection != null && connection.State != ConnectionState.Closed)
+                {
+                    connection.Close();
+                }
+            }
+
+            return user;
         }
     }
 }
