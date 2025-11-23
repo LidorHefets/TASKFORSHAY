@@ -3181,24 +3181,27 @@
     ]
   },
   "packageFolders": {
-    "/Users/nadavmarco/.nuget/packages/": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\TASKFORSHAY\\SERVER\\TASKFORSHAY.csproj",
       "projectName": "TASKFORSHAY",
-      "projectPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/TASKFORSHAY.csproj",
-      "packagesPath": "/Users/nadavmarco/.nuget/packages/",
-      "outputPath": "/Users/nadavmarco/לימודים/שנה 3/אינטרנטיות צד שרת/TASK/TASKFORSHAY/SERVER/obj/",
+      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\TASKFORSHAY\\SERVER\\TASKFORSHAY.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\TASKFORSHAY\\SERVER\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/nadavmarco/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3254,7 +3257,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
